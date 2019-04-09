@@ -4,6 +4,10 @@ project(DemoGafferExtension)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
+if(APPLE)
+  set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
+endif(APPLE)
+
 # build the library
 file( GLOB DemoGafferExtensionSrc src/DemoGafferExtension/*.cpp )
 link_directories( DemoGafferExtension ${GAFFER_ROOT}/lib )
