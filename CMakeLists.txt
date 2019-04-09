@@ -23,7 +23,7 @@ add_library( DemoGafferExtensionModule SHARED ${DemoGafferExtensionModuleSrc} )
 set_target_properties( DemoGafferExtensionModule PROPERTIES PREFIX "" OUTPUT_NAME "_DemoGafferExtension" )
 target_compile_definitions( DemoGafferExtensionModule PRIVATE BOOST_SIGNALS_NO_DEPRECATION_WARNING=1 )
 target_link_libraries( DemoGafferExtensionModule DemoGafferExtension )
-target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/include/python2.7 )
+target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/lib/Python.framework/Versions/2.7/include/python2.7 )
 target_link_libraries( DemoGafferExtensionModule GafferBindings )
 install( TARGETS DemoGafferExtensionModule DESTINATION python/DemoGafferExtension )
 
