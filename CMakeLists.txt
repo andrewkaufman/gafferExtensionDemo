@@ -4,9 +4,9 @@ project(DemoGafferExtension)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
-if(APPLE)
+if(DARWIN)
   set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
-endif(APPLE)
+endif(DARWIN)
 
 # build the library
 file( GLOB DemoGafferExtensionSrc src/DemoGafferExtension/*.cpp )
