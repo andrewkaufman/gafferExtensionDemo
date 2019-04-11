@@ -14,7 +14,7 @@ link_directories( DemoGafferExtension ${GAFFER_ROOT}/lib )
 add_library( DemoGafferExtension SHARED ${DemoGafferExtensionSrc} )
 target_compile_definitions( DemoGafferExtension PRIVATE BOOST_SIGNALS_NO_DEPRECATION_WARNING=1 )
 target_include_directories( DemoGafferExtension PRIVATE include ${GAFFER_ROOT}/include )
-target_link_libraries( DemoGafferExtension Gaffer GafferScene IECore IECorePython boost_python Python)
+target_link_libraries( DemoGafferExtension Gaffer GafferScene IECore )
 install( TARGETS DemoGafferExtension DESTINATION lib)
 
 # build the python bindings
@@ -24,7 +24,7 @@ set_target_properties( DemoGafferExtensionModule PROPERTIES PREFIX "" OUTPUT_NAM
 target_compile_definitions( DemoGafferExtensionModule PRIVATE BOOST_SIGNALS_NO_DEPRECATION_WARNING=1 )
 target_link_libraries( DemoGafferExtensionModule DemoGafferExtension )
 target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/lib/Python.framework/Versions/2.7/include/python2.7 )
-target_link_libraries( DemoGafferExtensionModule GafferBindings )
+target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python Python)
 install( TARGETS DemoGafferExtensionModule DESTINATION python/DemoGafferExtension )
 
 # build the python modules
