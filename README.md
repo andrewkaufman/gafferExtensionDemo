@@ -21,7 +21,7 @@ your custom extension.
 setenv GAFFER_ROOT <gaffer install path>
 setenv DEMO_INSTALL_PREFIX <your extension install path>
 
-cd demoGafferExtension
+cd gafferExtensionDemo
 cmake -DGAFFER_ROOT=$GAFFER_ROOT -DCMAKE_INSTALL_PREFIX=$DEMO_INSTALL_PREFIX .
 make install -j <num cores>
 ```
