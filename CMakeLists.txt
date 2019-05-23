@@ -26,11 +26,12 @@ target_link_libraries( DemoGafferExtensionModule DemoGafferExtension )
 
 if(APPLE)
   target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/lib/Python.framework/Versions/2.7/include/python2.7 )
+  target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python Python)
 else()
   target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/include/python2.7 )
+  target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python python2.7)
 endif(APPLE)
 
-target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python Python)
 install( TARGETS DemoGafferExtensionModule DESTINATION python/DemoGafferExtension )
 
 # build the python modules
