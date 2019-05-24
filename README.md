@@ -31,6 +31,10 @@ make install -j <num cores>
 
 Now that you've installed the extension to `$DEMO_INSTALL_PREFIX`, you need to tell Gaffer about it:
 
-`setenv GAFFER_EXTENSION_PATHS $DEMO_INSTALL_PREFIX:$GAFFER_EXTENSION_PATHS`
+`setenv GAFFER_EXTENSION_PATHS '$DEMO_INSTALL_PREFIX:$GAFFER_EXTENSION_PATHS'`
 
-And then run `gaffer` as normal.
+Next, test your install:
+
+`gaffer test DemoGafferExtensionTest DemoGafferExtensionUITest`
+
+Now run `gaffer` as normal.
