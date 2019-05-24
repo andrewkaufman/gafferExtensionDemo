@@ -37,6 +37,8 @@ install( TARGETS DemoGafferExtensionModule DESTINATION python/DemoGafferExtensio
 # build the python modules
 file( GLOB DemoGafferExtensionModuleFiles python/DemoGafferExtension/*.py )
 install( FILES ${DemoGafferExtensionModuleFiles} DESTINATION python/DemoGafferExtension )
+file( GLOB DemoGafferExtensionTestModuleFiles python/DemoGafferExtensionTest/*.py )
+install( FILES ${DemoGafferExtensionTestModuleFiles} DESTINATION python/DemoGafferExtensionTest )
 file( GLOB DemoGafferExtensionUIModuleFiles python/DemoGafferExtensionUI/*.py )
 install( FILES ${DemoGafferExtensionUIModuleFiles} DESTINATION python/DemoGafferExtensionUI )
 
