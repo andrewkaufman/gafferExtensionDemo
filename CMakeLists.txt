@@ -41,6 +41,8 @@ file( GLOB DemoGafferExtensionTestModuleFiles python/DemoGafferExtensionTest/*.p
 install( FILES ${DemoGafferExtensionTestModuleFiles} DESTINATION python/DemoGafferExtensionTest )
 file( GLOB DemoGafferExtensionUIModuleFiles python/DemoGafferExtensionUI/*.py )
 install( FILES ${DemoGafferExtensionUIModuleFiles} DESTINATION python/DemoGafferExtensionUI )
+file( GLOB DemoGafferExtensionUITestModuleFiles python/DemoGafferExtensionUITest/*.py )
+install( FILES ${DemoGafferExtensionUITestModuleFiles} DESTINATION python/DemoGafferExtensionUITest )
 
 # build the startup configs
 install( DIRECTORY startup DESTINATION . FILES_MATCHING PATTERN "*.py" )
