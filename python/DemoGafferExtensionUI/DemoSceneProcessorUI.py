@@ -15,7 +15,7 @@ Gaffer.Metadata.registerNode(
 
     plugs = {
 
-        "plugA" : [
+        "a" : [
 
             "description",
             """
@@ -26,7 +26,7 @@ Gaffer.Metadata.registerNode(
 
         ],
 
-        "plugB" : [
+        "b" : [
 
             "description",
             """
