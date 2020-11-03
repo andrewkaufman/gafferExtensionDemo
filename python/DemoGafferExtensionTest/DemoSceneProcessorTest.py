@@ -46,11 +46,12 @@ class DemoSceneProcessorTest( GafferSceneTest.SceneTestCase ) :
 		del s[:]
 
 		node["b"].setValue( "test" )
-		self.assertEqual( len( s ), 4 )
+		self.assertEqual( len( s ), 5 )
 		self.failUnless( s[0][0].isSame( node["b"] ) )
-		self.failUnless( s[1][0].isSame( node["out"]["bound"] ) )
-		self.failUnless( s[2][0].isSame( node["out"]["object"] ) )
-		self.failUnless( s[3][0].isSame( node["out"] ) )
+		self.failUnless( s[1][0].isSame( node["out"]["childBounds"] ) )
+		self.failUnless( s[2][0].isSame( node["out"]["bound"] ) )
+		self.failUnless( s[3][0].isSame( node["out"]["object"] ) )
+		self.failUnless( s[4][0].isSame( node["out"] ) )
 
 if __name__ == "__main__":
 	unittest.main()
