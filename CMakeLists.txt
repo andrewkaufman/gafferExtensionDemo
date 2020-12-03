@@ -29,7 +29,7 @@ if(APPLE)
   target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python Python)
 else()
   target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/include/python2.7 )
-  target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python python2.7)
+  target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python27 python2.7)
 endif(APPLE)
 
 install( TARGETS DemoGafferExtensionModule DESTINATION python/DemoGafferExtension )
