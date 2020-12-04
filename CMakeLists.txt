@@ -46,3 +46,6 @@ install( FILES ${DemoGafferExtensionUITestModuleFiles} DESTINATION python/DemoGa
 
 # build the startup configs
 install( DIRECTORY startup DESTINATION . FILES_MATCHING PATTERN "*.py" )
+
+# build the extra resources
+install( DIRECTORY resources DESTINATION . FILES_MATCHING PATTERN "*.gfr" PERMISSIONS OWNER_READ GROUP_READ WORLD_READ )
