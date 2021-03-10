@@ -1,4 +1,4 @@
-from DemoSceneProcessorTest import DemoSceneProcessorTest
+from . DemoSceneProcessorTest import DemoSceneProcessorTest
 
 if __name__ == "__main__":
 	import unittest

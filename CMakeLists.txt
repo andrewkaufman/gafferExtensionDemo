@@ -24,12 +24,14 @@ set_target_properties( DemoGafferExtensionModule PROPERTIES PREFIX "" OUTPUT_NAM
 target_compile_definitions( DemoGafferExtensionModule PRIVATE BOOST_SIGNALS_NO_DEPRECATION_WARNING=1 -D_GLIBCXX_USE_CXX11_ABI=0 )
 target_link_libraries( DemoGafferExtensionModule DemoGafferExtension )
 
+string(REPLACE "." "" PYTHON_VERSION_STRIPPED ${PYTHON_VERSION})
+string(REPLACE "3.7" "3.7m" PYTHON_FOLDER ${PYTHON_VERSION})
 if(APPLE)
-  target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/lib/Python.framework/Versions/2.7/include/python2.7 )
+  target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/lib/Python.framework/Versions/${PYTHON_VERSION}/include/python${PYTHON_VERSION} )
   target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python Python)
 else()
-  target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/include/python2.7 )
-  target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python27 python2.7)
+  target_include_directories( DemoGafferExtensionModule PRIVATE include ${GAFFER_ROOT}/include ${GAFFER_ROOT}/include/python${PYTHON_FOLDER})
+  target_link_libraries( DemoGafferExtensionModule GafferBindings IECorePython boost_python${PYTHON_VERSION_STRIPPED} python${PYTHON_FOLDER})
 endif(APPLE)
 
 install( TARGETS DemoGafferExtensionModule DESTINATION python/DemoGafferExtension )
@@ -49,3 +51,5 @@ install( DIRECTORY startup DESTINATION . FILES_MATCHING PATTERN "*.py" )
 
 # build the extra resources
 install( DIRECTORY resources DESTINATION . FILES_MATCHING PATTERN "*.gfr" PERMISSIONS OWNER_READ GROUP_READ WORLD_READ )
+
+
