@@ -23,7 +23,7 @@ setenv DEMO_INSTALL_PREFIX <your extension install path>
 
 mkdir gafferExtensionDemo/cmake-build-default
 cd gafferExtensionDemo/cmake-build-default
-cmake -DGAFFER_ROOT=$GAFFER_ROOT -DCMAKE_INSTALL_PREFIX=$DEMO_INSTALL_PREFIX ..
+cmake -DGAFFER_ROOT=$GAFFER_ROOT -DCMAKE_INSTALL_PREFIX=$DEMO_INSTALL_PREFIX -DPYTHON_VERSION=2.7 ..
 make install -j <num cores>
 ```
 

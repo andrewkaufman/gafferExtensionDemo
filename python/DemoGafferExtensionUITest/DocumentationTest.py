@@ -12,7 +12,7 @@ import GafferUITest
 
 class DocumentationTest( GafferUITest.TestCase ) :
 
-    def test( self ) :
+	def test( self ) :
 
 		self.maxDiff = None
 		self.assertNodesAreDocumented(
